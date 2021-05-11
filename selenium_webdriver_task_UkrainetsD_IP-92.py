@@ -18,6 +18,7 @@ username.send_keys('username')
 password = driver.find_element_by_name('password')
 password.send_keys('qwerty123')
 password.send_keys(Keys.RETURN)
-error = driver.find_element_by_xpath('//*[@id="js-flash-container"]/div')
-assert error.text == 'Incorrect username or password.'
+error = driver.find_element_by_xpath('//*[@id="login"]/p')
+assert error.text == 'There have been several failed attempts to sign in ' \
+                     'from this account or IP address. Please wait a while and try again later.'
 driver.close()
